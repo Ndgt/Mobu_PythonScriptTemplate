@@ -7,6 +7,7 @@ def main():
     somefunction()
 
 def somefunction():
+    # write some process
 
 if __name__ in ("__main__", "builtins"):
     main()  
