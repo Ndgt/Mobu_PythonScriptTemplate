@@ -43,17 +43,18 @@ class CharaInfoTool:
         return self.tool
 
     def DisplayUpdate(self, database:CharaInfo):
-        self.InfoDisplay.Caption = str(database.ReturnBoneNum()) + "\n" \
-                                 + database.IsSetReference()
+        self.InfoDisplay.Caption = "Bone Number : " + str(database.ReturnBoneNum()) + "\n" \
+                                 + "Referece Characterized : " + database.IsSetReference()
     
     ### when character list changed
-    def ListCallBack(self, control, event):
+    def ListCallBack(self, control:FBList, event):
         idx = control.ItemIndex
         chara = FBSystem().Scene.Characters[idx]
         self.DisplayUpdate(CharaInfo(chara))
 
+
     ### UI Creation funciton
-    def UICreate(self, tool):
+    def UICreate(self, tool:FBTool):
         # UI Elements
         self.ListTitleLabel = FBLabel()
         self.charaList = FBList()
@@ -82,7 +83,7 @@ class CharaInfoTool:
         x = FBAddRegionParam(lx,FBAttachType.kFBAttachLeft,"")
         y = FBAddRegionParam(ly+lh*2+10,FBAttachType.kFBAttachTop,"")
         w = FBAddRegionParam(lw,FBAttachType.kFBAttachLeft,"")
-        h = FBAddRegionParam(lh,FBAttachType.kFBAttachNone,"")
+        h = FBAddRegionParam(100,FBAttachType.kFBAttachNone,"")
         tool.AddRegion("InfoDisplay","InfoDisplay", x, y, w, h)
 
         # grant control for each regiton to VisualComponents
@@ -92,8 +93,8 @@ class CharaInfoTool:
 
 
     ### UI Configuration function
-    def UIConfigure(self, tool):
-        self.ListTitleLabel.Caption = "Character:"
+    def UIConfigure(self, tool:FBTool):
+        self.ListTitleLabel.Caption = "Character Name :"
     
         self.charaList.Style = FBListStyle.kFBDropDownList
         for chara in FBSystem().Scene.Characters:
