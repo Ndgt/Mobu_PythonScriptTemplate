@@ -5,7 +5,7 @@ from pyfbsdk import*
 from pyfbsdk_additions import*
 
 class Composition:
-    def __init__():
+    def __init__(self):
         print("some additional class")
 
 class SampleTool:
