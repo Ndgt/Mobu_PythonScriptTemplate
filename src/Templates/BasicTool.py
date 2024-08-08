@@ -2,8 +2,7 @@
 # 基本的なツールのテンプレート
 
 from pyfbsdk import *
-# from pyfbsdk_additions import *
-
+from pyfbsdk_additions import *
 
 def PopulateLayout(tool:FBTool):
     x = FBAddRegionParam(0,FBAttachType.kFBAttachLeft,"")
@@ -33,7 +32,7 @@ def PopulateLayout(tool:FBTool):
 
 def CreateTool():
     # Tool creation will serve as the hub for all other controls
-    #t = FBCreateUniqueTool("BasicTool")
+    # t = FBCreateUniqueTool("BasicTool")
     t = FBCreateUniqueTool("Vertical sample")
     t.StartSizeX = 400
     t.StartSizeY = 400

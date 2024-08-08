@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# characterに関する情報を表示するスクリプト
+# 複雑なツールのテンプレート
 
 from pyfbsdk import*
 from pyfbsdk_additions import*
